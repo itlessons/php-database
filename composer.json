@@ -1,0 +1,32 @@
+{
+    "name": "itlessons/php-database",
+    "type": "library",
+    "description": "PHP Database",
+    "keywords": [
+        "mysql",
+        "query builder",
+        "database",
+        "itlessons"
+    ],
+    "homepage": "https://github.com/itlessons/php-database",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "itlessons",
+            "homepage": "http://www.itlessons.info"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Database\\": "src/Database"
+        }
+    },
+    "version": "0.0.1",
+    "minimum-stability": "dev"
+}

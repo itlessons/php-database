@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` INT(11) NOT NULL,
+    `name` VARCHAR(30) NOT NULL,
+    PRIMARY KEY(`id`)
+);
+
+DELETE FROM `users`;
+
+INSERT INTO users (id, name) VALUES (1,'joe');
+INSERT INTO users (id, name) VALUES (2,'bob');
+INSERT INTO users (id, name) VALUES (3,'jack');
+
