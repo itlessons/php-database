@@ -74,7 +74,7 @@ $data = $manager
             
 ```
 
-More about query builder see in [QueryBuilderTest](https://github.com/itlessons/php-database/blob/master/tests/Database/QueryBuilderTest.php)
+More about query builder see in [QueryBuilderTest](https://github.com/itlessons/php-database/blob/master/tests/Database/Tests/QueryBuilderTest.php)
 
 ### Resources
 
