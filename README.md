@@ -30,7 +30,7 @@ Once the Manager instance has been registered. You may use it like so:
 $conn = $manager->getConnection();
 $data = $conn->queryAll('select * from users where id in (?,?,?)', 1, 2, 3);
 // $data = $conn->queryAll('select * from users where id in (?,?,?)', [1, 2, 3]);
-// $data => [['id' => 1, 'name' => 'joe'], ['id' => 2, 'name' => 'jack'], ['id' => 3, 'name' => 'bob']]
+// $data -> [['id' => 1, 'name' => 'joe'], ['id' => 2, 'name' => 'jack'], ['id' => 3, 'name' => 'bob']]
 
 $pdoSth = $conn->query('select * from users where id = ?',1);
 
