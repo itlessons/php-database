@@ -2,8 +2,6 @@
 
 namespace Database\Query;
 
-use Database\Connection;
-
 class Builder
 {
     protected $grammar;
@@ -37,9 +35,9 @@ class Builder
         'rlike', 'regexp', 'not regexp',
     );
 
-    public function __construct(Grammar $grammar)
+    public function __construct(Grammar $grammar = null)
     {
-        $this->grammar = $grammar;
+        $this->grammar = $grammar != null ? $grammar : new Grammar();
     }
 
     /**
