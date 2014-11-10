@@ -83,3 +83,8 @@ You can run the unit tests with the following command:
     $ cd path/to/php-database/
     $ composer.phar install
     $ phpunit
+    
+### Links
+
+* [Работаем с MySQL просто](http://www.itlessons.info/php/database-mysql/)
+    
