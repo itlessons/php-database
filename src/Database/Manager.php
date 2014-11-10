@@ -68,7 +68,7 @@ class Manager
      */
     public function table($table)
     {
-        $builder = new Builder($this->getConnection(), $this->getGrammar());
+        $builder = new Builder($this->getGrammar());
         return $builder->table($table);
     }
 
