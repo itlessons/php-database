@@ -29,10 +29,7 @@ Once the Manager instance has been registered. You may use it like so:
 ```PHP
 $conn = $manager->getConnection();
 $data = $conn->queryAll('select * from users where id in (?,?,?)', 1, 2, 3);
-// $data = $conn->queryAll('select * from users where id in (?,?,?)', [1, 2, 3]);
-// $data -> [['id' => 1, 'name' => 'joe'], ['id' => 2, 'name' => 'jack'], ['id' => 3, 'name' => 'bob']]
-
-$pdoSth = $conn->query('select * from users where id = ?',1);
+// $data -> [['id' => 1, 'name' => 'joe'], ...]
 
 $conn->exec('insert into users (id, name) values (?, ?)', 1, 'joe'));
 
