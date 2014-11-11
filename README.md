@@ -42,36 +42,28 @@ $conn->execBatch(file_get_contents('file_with_queries.txt'));
 **Using The Query Builder**
 
 ```PHP
-$builder = $manager
-                ->table('users')
-                ->select('*')
-                ->whereIn('id', [1,2,3]);
-                
-// $builder->toSql() -> ['select * from users where id in (?,?,?)', [1,2,3]]
+$data = $manager
+            ->query('users')
+            ->select('*')
+            ->whereIn('id', [1,2,3])
+            ->execute();
 
-$data = $conn->execute($builder);
-// $data -> [['id' => 1, 'name' => 'joe'], ['id' => 2, 'name' => 'jack'], ['id' => 3, 'name' => 'bob']]
+// $data -> [['id' => 1, 'name' => 'joe'], ...]
 
 
 $data = $manager
-            ->table('user')
+            ->query('users')
             ->update(['votes' => 2])
             ->where('id', 1)
             ->toSql();
 // $data -> ['update `user` set `votes` = ? where `id` = ?',[2,1]]
             
 $data = $manager
-          ->table('user')
+          ->query('users')
           ->insert([
               ['email' => 'john@example.com', 'votes' => 0],
               ['email' => 'john1@example.com', 'votes' => 1]
-          ])->toSql();            
-          
-// $data -> [
-//      'insert into `users` (`email`, `votes`) values (?, ?), (?, ?)', 
-//      ['john@example.com', 0, 'john1@example.com', 1]
-// ]          
-            
+          ])->execute();
 ```
 
 More about query builder see in [QueryBuilderTest](https://github.com/itlessons/php-database/blob/master/tests/Database/Tests/QueryBuilderTest.php)
@@ -86,5 +78,5 @@ You can run the unit tests with the following command:
     
 ### Links
 
-* [Работаем с MySQL просто](http://www.itlessons.info/php/database-mysql/)
+* [MySQL библиотека на сайте с помощью PHP](http://www.itlessons.info/php/database-mysql/)
     

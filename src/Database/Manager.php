@@ -4,6 +4,7 @@ namespace Database;
 
 use Database\Query\Builder;
 use Database\Query\Grammar;
+use Database\Query\Query;
 
 class Manager
 {
@@ -70,6 +71,16 @@ class Manager
     {
         $builder = new Builder($this->getGrammar());
         return $builder->table($table);
+    }
+
+    /**
+     * @param $table
+     * @return Query
+     */
+    public function query($table)
+    {
+        $query = new Query($this->getConnection(), $this->getGrammar());
+        return $query->table($table);
     }
 
     public function getGrammar()
