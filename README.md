@@ -65,6 +65,20 @@ $data = $manager
 
 More about query builder see in [QueryBuilderTest](https://github.com/itlessons/php-database/blob/master/tests/Database/Tests/QueryBuilderTest.php)
 
+### Installation
+
+The recommended way to install php-database is through [Composer][_Composer]. Just create a
+``composer.json`` file and run the ``php composer.phar install`` command to
+install it:
+
+    {
+        "require": {
+            "itlessons/php-database": "*"
+        }
+    }
+
+Alternatively, you can download the [php-database.zip][_php-database.zip] file and extract it.
+
 ### Resources
 
 You can run the unit tests with the following command:
@@ -77,3 +91,7 @@ You can run the unit tests with the following command:
 
 * [MySQL библиотека на сайте с помощью PHP](http://www.itlessons.info/php/database-mysql/)
     
+
+
+[_Composer]: http://getcomposer.org
+[_php-database.zip]:  https://github.com/itlessons/php-database/archive/master.zip
