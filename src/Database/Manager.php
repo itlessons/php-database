@@ -10,6 +10,7 @@ class Manager
 {
     protected $config = array();
     protected $grammar;
+    private $defaultConnectionName = 'default';
 
     /**
      * @var Connection[]
@@ -44,7 +45,12 @@ class Manager
 
     public function getDefaultConnectionName()
     {
-        return 'default';
+        return $this->defaultConnectionName;
+    }
+
+    public function setDefaultConnectionName($name)
+    {
+        $this->defaultConnectionName = $name;
     }
 
     protected function makeConnection($name)
@@ -64,7 +70,7 @@ class Manager
     }
 
     /**
-     * @param $table
+     * @param $table Table name
      * @return Builder
      */
     public function table($table)
@@ -74,12 +80,13 @@ class Manager
     }
 
     /**
-     * @param $table
+     * @param $table Table name
+     * @param $connName Connection name
      * @return Query
      */
-    public function query($table)
+    public function query($table, $connName)
     {
-        $query = new Query($this->getConnection(), $this->getGrammar());
+        $query = new Query($this->getConnection($connName), $this->getGrammar());
         return $query->table($table);
     }
 
